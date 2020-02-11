@@ -127,7 +127,7 @@ table {
   border-spacing: 0;
 }
 //CUSTOM STYLES
-$main-color: #3366ff;
+$main-color: white;
 $main-font: "Open Sans";
 $base-margin: 1.5em;
 $desktop-width: 780px;
@@ -137,10 +137,24 @@ $tablet-width: 320px;
   background: green;
   color: red;
 }
+body {
+  background-color: black;  
+}
+
+.logo {
+background-image: url(/assets/images/nyt-logo.svg);
+height: 100rem;
+width: 50rem;
+background-repeat: no-repeat;
+align-items: center;
+}
+
 // Base: contained within this file are all your resets, variables, mixins, and any utility classes.
 // |– _reset.scss        // Reset/normalize
 // |   |– _typography.scss   // Typography rules
-@mixin primary-links {
+
+
+@mixin mobile {
   color: white;
   text-decoration: underline;
 }
@@ -154,32 +168,57 @@ $tablet-width: 320px;
     @content; // <--this line is required
   }
 }
-.main {
+body {
   height: 100px;
   width: 100px;
   background-color: $main-color;
   margin: $base-margin * 2;
+
+
   @include tablet {
-    background-color: blue;
+    background-color: black;
   }
   @include desktop {
-    background-color: green;
+    background-color:black;
+    }
   }
+// ________ HEADER__________
+
+
+#select {
+    display: inline-block;
+    color: black;
+    font-family:  $main-font;
+    font-weight: 300;
+    width: 10em;
+    font-size: 1em;
+    justify-content: center;
+  }
+
   p {
-    color: white;
+    display: inline-block;
     font-family: $main-font;
-  }
-  &:hover {
-    background: blue;
-  }
+    color: white;
+    align-items: center;
+    font-size: 1em;
+    
+  .dropbtn {
+  display: inline-block;
+  justify-content: center;
 }
-.main2 {
-  @extend %active;
-  width: 200px;
-  height: 200px;
-}
-// .main2{
-// 	@include primary-links;
-// 	width:200px;
-// 	height:200px;
+
+  // &:hover {
+  //   background: blue;
+  // }
+
+// .header {
+//   @extend %active;
+//   width: 200px;
+//   height: 200px;
 // }
+// .main-content {
+// 	@include primary-links;
+// 	width:100px;
+// 	height:100px;
+// }
+  }

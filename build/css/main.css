@@ -126,38 +126,75 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  background-color: black; }
+
 .logo {
-  background: url(/assets/images/nyt-logo.svg);
-}
+  background-image: url(/assets/images/nyt-logo.svg);
+  height: 100rem;
+  width: 50rem;
+  background-repeat: no-repeat;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
-.container { 
-  background-color: #000000;
-}
-
-.header {
+body {
   height: 100px;
   width: 100px;
-  background-color: #000000;
+  background-color: white;
   margin: 3em; }
   @media (min-width: 320px) {
-    .main {
-      background-color:#000000; } }
+    body {
+      background-color: black; } }
   @media (min-width: 780px) {
-    .header {
-      background-color: #000000; } }
-  #name {
-    color: white;
-    font-family: "Open Sans"; }
-  /* .main:hover {
-    background: blue; } */
+    body {
+      background-color: black; } }
 
-.logo {
-  width: 200px;
-  height: 200px; 
-  text-align: center;
-}
+#select {
+  display: inline-block;
+  color: black;
+  font-family: "Open Sans";
+  font-weight: 300;
+  width: 10em;
+  font-size: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
-.header {
-  width: 100rem;
-  height: 15rem;
-  margin: 0rem; }
+p {
+  display: inline-block;
+  font-family: "Open Sans";
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1em; }
+  p .dropbtn {
+    display: inline-block;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px; }
+
+.main-content {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  margin: 0%;
+  height: 100vh; }
+
+main {
+  grid-column: 1 / 4; }
+
+aside {
+  grid-column: 2 / 4; }
+
+main {
+  grid-column: 3 / 4; }
+
+aside {
+  grid-column: 4 / 4; }
