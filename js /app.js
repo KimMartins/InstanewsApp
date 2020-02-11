@@ -16,9 +16,7 @@ $(function(){
                 // console.log (value)
             
                 //Remove previous articles
-                // $('.drop-drown').on("change", function() {
-                //     $('.main-content').empty()
-                // })
+             
                 
                 //Variables
                 let articleImage = value.multimedia[3].url

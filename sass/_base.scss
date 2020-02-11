@@ -137,8 +137,11 @@ $tablet-width: 320px;
   background: green;
   color: red;
 }
+// Base: contained within this file are all your resets, variables, mixins, and any utility classes.
+// |– _reset.scss        // Reset/normalize
+// |   |– _typography.scss   // Typography rules
 @mixin primary-links {
-  color: blue;
+  color: white;
   text-decoration: underline;
 }
 @mixin tablet {

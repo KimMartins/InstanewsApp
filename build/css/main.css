@@ -126,27 +126,38 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.main2 {
-  background: green;
-  color: red; }
+.logo {
+  background: url(/assets/images/nyt-logo.svg);
+}
 
-.main {
+.container { 
+  background-color: #000000;
+}
+
+.header {
   height: 100px;
   width: 100px;
-  background-color: #3366ff;
+  background-color: #000000;
   margin: 3em; }
   @media (min-width: 320px) {
     .main {
-      background-color: blue; } }
+      background-color:#000000; } }
   @media (min-width: 780px) {
-    .main {
-      background-color: green; } }
-  .main p {
+    .header {
+      background-color: #000000; } }
+  #name {
     color: white;
     font-family: "Open Sans"; }
-  .main:hover {
-    background: blue; }
+  /* .main:hover {
+    background: blue; } */
 
-.main2 {
+.logo {
   width: 200px;
-  height: 200px; }
+  height: 200px; 
+  text-align: center;
+}
+
+.header {
+  width: 100rem;
+  height: 15rem;
+  margin: 0rem; }
