@@ -133,30 +133,66 @@ $base-margin: 1.5em;
 $desktop-width: 780px;
 $tablet-width: 320px;
 //place holder
-%active {
-  background: green;
-  color: red;
-}
-body {
-  background-color: black;  
-}
 
-.logo {
-background-image: url(/assets/images/nyt-logo.svg);
-height: 100rem;
-width: 50rem;
-background-repeat: no-repeat;
-align-items: center;
-}
+// %active {
+//   background: green;
+//   color: red;
+// }
 
+
+// web-container 
+
+ 
+
+  
 // Base: contained within this file are all your resets, variables, mixins, and any utility classes.
 // |– _reset.scss        // Reset/normalize
 // |   |– _typography.scss   // Typography rules
 
 
-@mixin mobile {
+@media (max-width: 320px) {
+  .header {
+    background-color: red } }
+
+  .img { 
+    background-image: url(/assets/images/nyt-logo.svg);
+    height: 100rem;
+    width: 50rem;
+    background-repeat: no-repeat;
+  }
+
+
+.dropbtn {
+  display: inline-flex;
+  height: 3rem;
+  width: 10rem;
+  justify-content: start;
+}
+
+#select {
+  display: inline-flex;
+  font-family:  $main-font;
+  font-weight: 300;
+  width: 100em;
+  height: 2em;
+  font-size: 1em;
+
+}
+
+p {
+  display: inline-block;
+  font-family: $main-font;
   color: white;
-  text-decoration: underline;
+  align-items: center;
+  font-size: 1em;
+
+
+
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content; //--this line is required
+    
+  }
 }
 @mixin tablet {
   @media (min-width: $tablet-width) {
@@ -164,61 +200,36 @@ align-items: center;
   }
 }
 @mixin desktop {
-  @media (min-width: $desktop-width) {
-    @content; // <--this line is required
+  @media (max-width: $desktop-width) {
+    @content; // <--this line is required  
   }
 }
+
 body {
-  height: 100px;
-  width: 100px;
+  height: 100%;
+  width: 100vh;
   background-color: $main-color;
   margin: $base-margin * 2;
 
-
+  @include mobile {
+    background-color: red;
+  }
   @include tablet {
-    background-color: black;
+    background-color: blue;
   }
   @include desktop {
     background-color:black;
     }
   }
-// ________ HEADER__________
 
-
-#select {
-    display: inline-block;
-    color: black;
-    font-family:  $main-font;
-    font-weight: 300;
-    width: 10em;
-    font-size: 1em;
-    justify-content: center;
-  }
-
-  p {
-    display: inline-block;
-    font-family: $main-font;
-    color: white;
-    align-items: center;
-    font-size: 1em;
-    
-  .dropbtn {
-  display: inline-block;
-  justify-content: center;
 }
+
+
+
 
   // &:hover {
   //   background: blue;
   // }
 
-// .header {
-//   @extend %active;
-//   width: 200px;
-//   height: 200px;
-// }
-// .main-content {
-// 	@include primary-links;
-// 	width:100px;
-// 	height:100px;
-// }
-  }
+
+  
