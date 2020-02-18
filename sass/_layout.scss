@@ -1,45 +1,127 @@
-// grid / flex / referencing headers, paragraphs etc...
-// // |– layout/
-// |   |– _navigation.scss   // Navigation
-// |   |– _grid.scss         // Grid system
-// |   |– _header.scss       // Header
-// |   |– _footer.scss       // Footer
-// |   |– _sidebar.scss      // Sidebar
-// |   |– _forms.scss        // Forms
 
-
-
-
-// grid system //
-
-.grid {
-    display: grid;
-    grid-template-columns: 100px 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px 100px;
+// CUSTOM STYLES MOBILE
+header { 
+  @include flex;
+  // stetch goal -- animation: transform-style: ;
 }
 
-.main-content { 
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto auto auto;
-    margin: 0%;
-    height: 100vh;
+#logo { 
+  @include flex;
+  width: 17rem;
+  background-repeat: no-repeat;
+
+    &:hover {
+      background: #4B0082;
+    }
 }
 
-main {
-    grid-column: 1 / 4;
+// // FORM.SCSS 
+// Choose a section  
+#sections { 
+  @include font;
+  @include flex;
+  font-size: 20px;
+}
+
+.dropbtn {
+  @include flex;
+  height: 3rem;
+  width: 20rem;
+}
+
+// sections text
+#select {
+  @include flex;
+  @include font;
+  color: #000000;
+  width: 100px;
+  height: 80px;
+}
+
+@mixin grid-container {
+  background-color: #000000;
+}
+
+@mixin grid {
+  @include grid;
+  grid-template-columns: 1fr;
   }
-  
-  aside {
-    grid-column: 2 / 4;
+@mixin tablet {
+  @include grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
+@mixin desktop {
+  @include grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.figure {
+  position: relative;
+}
+
+.abstract {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  font-size: small;
+  color: #c2c2c2;
+  background: rgba(0, 0, 0, 1); 
+}
+
+.articleImage  {
+  object-fit: cover; 
+  width: 75px;
+  height: 75px;
+  margin-top: 1rem;
+}
+
+
+// @mixin primary-links {
+// text-underline-position: white;
+// }
+
+//   &:hover {
+//     border-color: green($color: #008000);
+//   }
+// }
+
+    
+footer {
+  @include font;
+  @include flex;
+  font-size: 20px;
+  color: #c2c2c2;
+  margin-bottom: $base-margin;
+  margin-top: 200px;
+  align-items: center;
+  padding: 20px;
+}
+
+// CUSTOM STYLES FOR TABLET
+  @media screen and (min-width: 600px) {
+  header,
+  #logo {
+    @include flex-start;
+    padding-left: 20px;
+  }
+}
+
+html,
+body {
+  background-color: #000000;
+  color: $main-color;
+  margin: $base-margin * 2;
+  font-size: $font-size;
+  font-family: $main-font;
+  font-style: $font-style;
+  font-weight: $font-weight;
+}
+
+footer {
+  @include flex-start; 
+    text-align: left;
+    padding-left: 20px;
   
-    main {
-      grid-column: 3 / 4;
-    }
-  
-    aside {
-      grid-column: 4 / 4;
-    }
-  
-  
+} 
+
+
