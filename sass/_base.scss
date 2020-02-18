@@ -127,63 +127,42 @@ table {
   border-spacing: 0;
 }
 
-// Base: contained within this file are all your resets, variables, mixins, and any utility classes.
-// |– _reset.scss        // Reset/normalize
-// |   |– _typography.scss   // Typography rules
-
-
 //CUSTOM STYLES
 $main-color: #ffffff;
 $main-font: "Open Sans Light";
-$font-size: 16px;
+$font-style: normal;
+$font-size: 1em;
+$font-weight: 300;
 $base-margin: 1.5em;
 $desktop-width: 1240px; 
-// 780px if run into problems
+// 780px -- max-width ~ if run into problems 
 $tablet-width: 600px;
 
-// ~ looking into later ~ 
-// %active {
-//   background: green;
-//   color: red;
-// }
-
 // CUSTOM STYLE SET TO MOBILE AS DEFAULT 
-
-  @mixin tablet {
-    @media (min-width: $tablet-width) {
-      @content; // <--this line is required
-    }
-  }
-  @mixin desktop {
-    @media (max-width: $desktop-width) {
-      @content; // <--this line is required  
-    }
-  }
-
 body,
 html {
-  max-width: 1240px;
   // height: 100%;
   // width: 100vh;
   background-color: #000000;
   color: $main-color;
   margin: $base-margin * 2;
-  font-size: 16px;
-  font-weight: 300;
+  font-size: $font-size;
   font-family: $main-font;
-  font-style: normal;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  
 }
 
 @mixin reset-list {
   margin: 0;
-  padding: 0;
 }
 
 @mixin font {
-  font-size: 16px;
+  font-size: $font-size;
   color: $main-color;
   font-family: $main-font;
-  font-style: normal;
+  font-style: $font-style;
+  font-weight: $font-weight;
 }
 
 @mixin flex {
@@ -192,25 +171,28 @@ html {
   flex-direction: column;
 }
 
-footer {
-  @include flex;
-  @include font;
-  font-size: 20px;
-  color: #c2c2c2;
-  margin-bottom: $base-margin;
-  margin-bottom: 1em;
-  // height: 5rem;
+@mixin flex-start {
+  display: flex;
+  align-items: flex-start;
 }
 
-  @include tablet {
-    background-color: #000000;
+@mixin grid { 
+  display: grid;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-width) {
+    @content; // <--this line is required
   }
-  @include desktop { 
-    background-color: #000000;
-    }
-  
-
-
+}
+@mixin desktop {
+  @media screen and (max-width: $desktop-width) {
+    @content; // <--this line is required
+  }
+}
 
 
 
