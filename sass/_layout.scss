@@ -38,64 +38,81 @@ header {
   height: 80px;
 }
 
-@mixin grid-container {
-  background-color: #000000;
+#grid-container { 
+  @include grid; 
+  background: #000000;
+  padding: 5px;
 }
 
-@mixin grid {
-  @include grid;
-  grid-template-columns: 1fr;
+ 
+.main-content {
+  height: auto;
+  width: 100%;
   }
-@mixin tablet {
-  @include grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-@mixin desktop {
-  @include grid;
-    grid-template-columns: repeat(4, 1fr);
-}
+
+
 
 .figure {
   position: relative;
+  text-align: center;
 }
 
-.abstract {
+.articleImage img { 
+  @include grid;
+  object-fit: contain; 
+  height: 100%;
+}
+
+.description {
+  @include reset-list;
+  background: rgba(0, 0, 0, 0.75);
   position: absolute;
   bottom: 0;
-  padding: 10px;
-  font-size: small;
-  color: #c2c2c2;
-  background: rgba(0, 0, 0, 1); 
 }
 
-.articleImage  {
-  object-fit: cover; 
-  width: 75px;
-  height: 75px;
-  margin-top: 1rem;
+.article-text {
+@include font;
+padding: 10px;
+color: white;
+text-underline-position: white;
+
+  &:hover {
+    background: #4B0082;
 }
 
-
-// @mixin primary-links {
-// text-underline-position: white;
-// }
-
-//   &:hover {
-//     border-color: green($color: #008000);
-//   }
-// }
-
+.article-text #grid {
+  flex-wrap: wrap;
+}
     
 footer {
-  @include font;
-  @include flex;
   font-size: 20px;
   color: #c2c2c2;
-  margin-bottom: $base-margin;
-  margin-top: 200px;
-  align-items: center;
-  padding: 20px;
+  vertical-align: baseline;
+  align-content: flex-end;
+  
 }
+
+
+// LAYOUT STYLE FOR TABLET 
+#grid { 
+  @include grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+#grid {
+  @include grid;
+    grid-template-columns: repeat 1fr 1fr 1fr 1fr;
+}
+
+
+
+
+
+
+
+
+
 
 // CUSTOM STYLES FOR TABLET
   @media screen and (min-width: 600px) {
@@ -106,22 +123,24 @@ footer {
   }
 }
 
-html,
-body {
-  background-color: #000000;
-  color: $main-color;
-  margin: $base-margin * 2;
-  font-size: $font-size;
-  font-family: $main-font;
-  font-style: $font-style;
-  font-weight: $font-weight;
+footer {
+  @include flex-start;
+  padding-left: 20px;
+    @include desktop {
+      @include flex-start;
+    }
 }
 
-footer {
-  @include flex-start; 
-    text-align: left;
-    padding-left: 20px;
+
   
 } 
+  
 
+  @media screen and (max-width: 1240px) {
+    header,
+    #logo {
+      @include flex-start;
+      padding-left: 20px;
+    }
 
+  }
