@@ -139,10 +139,13 @@ $desktop-width: 1240px;
 $tablet-width: 600px;
 
 // CUSTOM STYLE SET TO MOBILE AS DEFAULT 
-body,
-html {
-  // height: 100%;
-  // width: 100vh;
+// html { 
+
+// }
+
+body {
+  height: 100%;
+  width: 100vh;
   background-color: #000000;
   color: $main-color;
   margin: $base-margin * 2;
@@ -155,6 +158,7 @@ html {
 
 @mixin reset-list {
   margin: 0;
+  width: 100%;
 }
 
 @mixin font {
@@ -174,14 +178,18 @@ html {
 @mixin flex-start {
   display: flex;
   align-items: flex-start;
+  justify-content: start;
 }
 
 @mixin grid { 
   display: grid;
   margin: 0 auto;
   width: 100%;
-  margin-top: 1rem;
+  background-color: #000000;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 }
+
 
 @mixin tablet {
   @media screen and (min-width: $tablet-width) {
