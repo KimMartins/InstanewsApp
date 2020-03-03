@@ -1,48 +1,74 @@
 $(function(){
   
-    $(".dropbtn").on("change", function() {
-   let userInput = $("select").val()
+    $("#select").on("change", function() {
+        let userInput = $("#select").val();
+    console.log(userInput);
+    $.ajax({
+        dataType: "json",
+        method: "GET",
+        url: `https://api.nytimes.com/svc/topstories/v2/${userInput}.json?api-key=qZeF0WlVIE49aaMuTGpSM5bAxYeDLSyT`,
 
-   console.log(userInput)
+            }).done(function ({results}){
+                 //Max listing
     
-   $.ajax({
-      dataType: "json",
-      method: "GET",
-      url: `https://api.nytimes.com/svc/topstories/v2/${userInput}.json?api-key=qZeF0WlVIE49aaMuTGpSM5bAxYeDLSyT`
-        
-        }).done(function ({results}){
-            $.each(results, function(index, value) {
-                // console.log (index,value)
-                // console.log (value)
-            
-                //Remove previous articles
-             
+                // console.log(results)
+                $.each(results, function(index, value) {
+                    if (index === 12) return false;
+                    // console.log (index,value)
+                    console.log (value)
+                    // console.log (userInput)
+
+
+                     
+                    // hasOwnProperty returns a boolean value indicating whether the object has a property with the name of the argument. 
+                if(value.multimedia){
+                    let length = value.multimedia.length
+                    console.log("length: ", length)
+                }
+
+                    // if (Object.keys) {
+                    //     Object.keys = function (obj) {
+                    //         var keys = [k],
+                    //             k;
+                    //         for (f in obj) {
+                    //             if (Object.prototype.hasOwnProperty.call(obj, k)) {
+                    //                 keys.push(k);
+                    //             }
+                    //         }
+                    //         return keys;
+                    // }
+                // };
+                // console.log(Object.prototype.hasOwnProperty);
+
+                    //Variables
+                    let articleImage = value.multimedia[0].url
+                    let url = value.url
+                    let description = value.abstract
+              
+                    // console.log(articleImage)
+                    // console.log(url)
+                    // console.log(description);
+               
+                   
+                   
+                   
+
+                    //Display articles 
+
+                    $('.main-content').append(`
+                    <figure class="articleImage">
+                        <img src="${articleImage}">
+                        <a href="${url}" target="new">
+                            <p class="article-text">${description}<p>
+                        </a>
+                    </figure>`);
+
+
+                          
                 
-                //Variables
-                let articleImage = value.multimedia[3].url
-                let url = value.url
-                let description = value.abstract
-                console.log(articleImage)
-                console.log(url)
-                console.log(description);
-
-                //Max listing
-                if (index === 12) return false;
-                
-                //Display articles 
-
-                $('.main-content').append(`
-                <figure class="articleImage">
-                    <img src="${articleImage}">
-                    <a href="${url}" target="new">
-                    <p class="article-text">${description}<p></a>
-                </figure>`);
-
-                })
             })
+        })
 
   
       })
 });
-
-// article image = multimedia 
