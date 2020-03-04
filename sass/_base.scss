@@ -104,9 +104,7 @@ nav,
 section {
   display: block;
 }
-body {
-  line-height: 1;
-}
+
 ol,
 ul {
   list-style: none;
@@ -127,9 +125,23 @@ table {
   border-spacing: 0;
 }
 
+@font-face {
+  font-family: '/assets/fonts/Open Sans';
+  src: url('/assets/fonts/OpenSans-Light.eot');
+  src: url('/assets/fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/OpenSans-Light.woff2') format('woff2'),
+      url('/assets/fonts/OpenSans-Light.woff') format('woff'),
+      url('/assets/fonts/OpenSans-Light.ttf') format('truetype'),
+      url('/assets/fonts/OpenSans-Light.svg#OpenSans-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
 //CUSTOM STYLES
 $main-color: #ffffff;
-$main-font: "Open Sans Light";
+$black-color: #000000;
+$main-font: 'Open Sans';
 $font-style: normal;
 $font-size: 1em;
 $font-weight: 300;
@@ -144,46 +156,48 @@ $tablet-width: 600px;
 // }
 
 body {
-  height: 100%;
-  width: 100vh;
-  background-color: #000000;
+
+  background-color: $black-color;
   color: $main-color;
-  margin: $base-margin * 2;
-  font-size: $font-size;
+  // margin: $base-margin * 2;
   font-family: $main-font;
   font-style: $font-style;
   font-weight: $font-weight;
-  
+  font-size: $font-size;
+  line-height: 1;
 }
 
-@mixin reset-list {
-  margin: 0;
-  width: 100%;
-}
+// @mixin reset-list {
+//   margin: 0;
+//   width: 100%;
+//   margin-left: 0;
+//   margin-right: 0;
+// }
 
 @mixin font {
-  font-size: $font-size;
-  color: $main-color;
   font-family: $main-font;
-  font-style: $font-style;
+  font-size: $font-size;
   font-weight: $font-weight;
+  font-style: $font-style;
 }
 
-@mixin flex {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+// @mixin flex {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   justify-content: center;
+  
+// }
 
-@mixin flex-start {
-  display: flex;
-  align-items: flex-start;
-  justify-content: start;
-}
+// @mixin flex-start {
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: flex-start;
+// }
 
 @mixin grid { 
   display: grid;
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
   background-color: #000000;
   grid-template-columns: 1fr;
@@ -194,11 +208,20 @@ body {
 @mixin tablet {
   @media screen and (min-width: $tablet-width) {
     @content; // <--this line is required
+  } 
+#grid {
+  @include grid;
+    grid-template-columns: repeat 1fr 1fr 1fr 1fr;
+} 
   }
-}
+
 @mixin desktop {
   @media screen and (max-width: $desktop-width) {
     @content; // <--this line is required
+  }
+#grid { 
+  @include grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
