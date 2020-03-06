@@ -26,20 +26,6 @@ $(function(){
                     console.log("length: ", length)
                 }
 
-                    // if (Object.keys) {
-                    //     Object.keys = function (obj) {
-                    //         var keys = [k],
-                    //             k;
-                    //         for (f in obj) {
-                    //             if (Object.prototype.hasOwnProperty.call(obj, k)) {
-                    //                 keys.push(k);
-                    //             }
-                    //         }
-                    //         return keys;
-                    // }
-                // };
-                // console.log(Object.prototype.hasOwnProperty);
-
                     //Variables
                     let articleImage = value.multimedia[0].url
                     let url = value.url
