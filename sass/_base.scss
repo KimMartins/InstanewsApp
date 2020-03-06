@@ -124,69 +124,84 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans-BoldItalic.ttf");
+  src: url("/assets/fonts/OpenSans-BoldItalic.ttf?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/OpenSans-BoldItalic.ttf.woff2") format("woff2"),
+    url("/assets/fonts/OpenSans-BoldItalic.ttf.woff") format("woff"),
+    url("/assets/fonts/OpenSans-BoldItalic.ttf.ttf") format("truetype"),
+    url("/assets/fonts/OpenSans-BoldItalic.ttf.svg#OpenSans-BoldItalic")
+      format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
 
 @font-face {
-  font-family: '/assets/fonts/Open Sans';
-  src: url('/assets/fonts/OpenSans-Light.eot');
-  src: url('/assets/fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
-      url('/assets/fonts/OpenSans-Light.woff2') format('woff2'),
-      url('/assets/fonts/OpenSans-Light.woff') format('woff'),
-      url('/assets/fonts/OpenSans-Light.ttf') format('truetype'),
-      url('/assets/fonts/OpenSans-Light.svg#OpenSans-Light') format('svg');
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans-Bold.ttf");
+  src: url("/assets/fonts/OpenSans-Bold.ttf?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/OpenSans-Bold.ttf.woff2") format("woff2"),
+    url("/assets/fonts/OpenSans-Bold.ttf.woff") format("woff"),
+    url("/assets/fonts/OpenSans-Bold.ttf.ttf") format("truetype"),
+    url("/assets/fonts/OpenSans-Bold.ttf.svg#OpenSans-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans-LightItalic.ttf");
+  src: url("/assets/fonts/OpenSans-LightItalic.ttf?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/OpenSans-LightItalic.ttf.woff2") format("woff2"),
+    url("/assets/fonts/OpenSans-LightItalic.ttf.woff") format("woff"),
+    url("/assets/fonts/OpenSans-LightItalic.ttf.ttf") format("truetype"),
+    url("/assets/fonts/OpenSans-LightItalic.ttf.svg#OpenSansLight-Italic")
+      format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "/assets/fonts/Open Sans";
+  src: url("/assets/fonts/OpenSans-Light.eot");
+  src: url("/assets/fonts/OpenSans-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/OpenSans-Light.woff2") format("woff2"),
+    url("/assets/fonts/OpenSans-Light.woff") format("woff"),
+    url("/assets/fonts/OpenSans-Light.ttf") format("truetype"),
+    url("/assets/fonts/OpenSans-Light.svg#OpenSans-Light") format("svg");
   font-weight: 300;
   font-style: normal;
 }
 
-
-//CUSTOM STYLES
+//custom style variables
 $main-color: #ffffff;
 $black-color: #000000;
-$main-font: 'Open Sans';
+$main-font: "Open Sans";
 $font-style: normal;
 $font-size: 1em;
 $font-weight: 300;
 $base-margin: 1.5em;
-$desktop-width: 1240px; 
-// 780px -- max-width ~ if run into problems 
+$line-height: 1;
+
 $tablet-width: 600px;
+$desktop-width: 1240px;
 
-// CUSTOM STYLE SET TO MOBILE AS DEFAULT 
-// html { 
-
+// @mixin font {
+//   font-family: $main-font;
+//   font-size: $font-size;
+//   font-weight: $font-weight;
+//   font-style: $font-style;
 // }
-
-body {
-
-  background-color: $black-color;
-  color: $main-color;
-  // margin: $base-margin * 2;
-  font-family: $main-font;
-  font-style: $font-style;
-  font-weight: $font-weight;
-  font-size: $font-size;
-  line-height: 1;
-}
-
-// @mixin reset-list {
-//   margin: 0;
-//   width: 100%;
-//   margin-left: 0;
-//   margin-right: 0;
-// }
-
-@mixin font {
-  font-family: $main-font;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  font-style: $font-style;
-}
 
 // @mixin flex {
-//   display: flex;
-//   align-items: center;
-//   flex-direction: column;
-//   justify-content: center;
-  
+//   display: $flex;
+//   align-items: $align-items;
+//   flex-direction: $flex-direction;
+//   justify-content: $justify-content;
 // }
 
 // @mixin flex-start {
@@ -195,37 +210,23 @@ body {
 //   justify-content: flex-start;
 // }
 
-@mixin grid { 
-  display: grid;
-  margin: 0;
-  width: 100%;
-  background-color: #000000;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-}
-
+// @mixin grid {
+//   display: grid;
+//   margin: 0;
+//   width: 100%;
+//   background-color: #000000;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: auto;
+// }
 
 @mixin tablet {
   @media screen and (min-width: $tablet-width) {
     @content; // <--this line is required
-  } 
-#grid {
-  @include grid;
-    grid-template-columns: repeat 1fr 1fr 1fr 1fr;
-} 
   }
+}
 
 @mixin desktop {
   @media screen and (max-width: $desktop-width) {
     @content; // <--this line is required
   }
-#grid { 
-  @include grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 }
-
-
-
-
-  
