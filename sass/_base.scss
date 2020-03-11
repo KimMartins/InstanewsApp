@@ -179,54 +179,56 @@ table {
 
 //custom style variables
 $main-color: #ffffff;
+
 $black-color: #000000;
 $main-font: "Open Sans";
 $font-style: normal;
 $font-size: 1em;
 $font-weight: 300;
+
 $base-margin: 1.5em;
 $line-height: 1;
 
 $tablet-width: 600px;
 $desktop-width: 1240px;
 
-// @mixin font {
-//   font-family: $main-font;
-//   font-size: $font-size;
-//   font-weight: $font-weight;
-//   font-style: $font-style;
-// }
+@mixin font {
+  font-family: $main-font;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
 
-// @mixin flex {
-//   display: $flex;
-//   align-items: $align-items;
-//   flex-direction: $flex-direction;
-//   justify-content: $justify-content;
-// }
+@mixin flex {
+  display: $flex;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+}
 
-// @mixin flex-start {
-//   display: flex;
-//   align-items: flex-start;
-//   justify-content: flex-start;
-// }
+@mixin flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
 
-// @mixin grid {
-//   display: grid;
-//   margin: 0;
-//   width: 100%;
-//   background-color: #000000;
-//   grid-template-columns: 1fr;
-//   grid-template-rows: auto;
-// }
+@mixin grid {
+  display: grid;
+  margin: 0;
+  width: 100%;
+  background-color: #000000;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
 
 @mixin tablet {
   @media screen and (min-width: $tablet-width) {
-    @content; // <--this line is required
+    @content;
   }
 }
 
 @mixin desktop {
   @media screen and (max-width: $desktop-width) {
-    @content; // <--this line is required
+    @content;
   }
 }
