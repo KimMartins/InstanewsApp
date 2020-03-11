@@ -1,0 +1,69 @@
+// layout styles for tablet
+@media screen and (min-width: 600px) {
+  body p {
+    @include flex();
+    padding-left: 100px;
+  }
+
+  #select {
+    @include flex();
+    padding-left: 50px;
+    width: 100px;
+    height: 80px;
+  }
+
+  .logo-container {
+    text-align: start;
+
+    img {
+      margin-right: 0px;
+      margin-left: 50px;
+      margin-bottom: 50px;
+      margin-top: 5 0px;
+    }
+  }
+
+  // .img {
+  //     @include flex-start();
+  // }
+
+  .dropbtn-container {
+    @include flex();
+  }
+
+  .grid-wrapper {
+    @include flex();
+    justify-content: flex;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 0 auto;
+    height: 100%;
+  }
+}
+
+.thumbnail {
+  height: 500px;
+}
+
+.abstract {
+  padding: 10px;
+}
+
+#main-content {
+  height: auto;
+  width: 200%;
+}
+
+.footer-container {
+  @include flex-start();
+  padding-left: 20px;
+
+  p {
+    @include font();
+    margin-top: 50px;
+  }
+}
