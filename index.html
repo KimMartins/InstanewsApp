@@ -2,25 +2,40 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="build/css/main.css" />
+  <link rel="stylesheet" href="sass/_desktop.scss" />
+  <link rel="stylesheet" href="sass/_tablet.scss" />  
 
   <title>Instant News</title>
-</head>
 
-<!--web-container for box-sizing? -->
+</head>
+  
 <body>
+
 <!-- header -->
-    <header id="header">
-        <img class="logo"src="assets/images/nyt-logo.svg" alt="NY Times Logo" />
-      
+<section id="logo-container">
+  <img src="assets/images/nyt-logo.svg" alt="NY Times Logo" />
+</section>
+
 <!-- drop-down menu -->
-    <div class="dropbtn">
-          <h1 class="choose">Choose a section:</h1>
-          <select class="select">
-            <label for="select" name="Choose a section">
+<div class="dropbtn-container">
+  <p class="choose-section">Choose a section:</p>
+    
+    <!-- grid / newsletter starts -->
+    <select id="select">
+      <label for="select" name="Choose a section">
+      <!-- datalist element contains a set of <option> elements -->
+        <datalist class="grid-wrapper" name="Choose a section">       
+      
+      <!-- ! utilize if datalist fails to display ! -->
+      <!-- <form> is an example of a semantic element.  -->
+      <!-- <form action ="" id="news-articles"></form> -->
+
+          <div class="grid">
             <option value="sections" selected="selected">Sections...</option>            
             <option value="arts">Arts</option>
             <option value="automobiles">Automobiles</option>
@@ -47,20 +62,20 @@
             <option value="upshot">Upshot</option>
             <option value="us">US</option>
             <option value="world">World</option>
+            </div>
           </label> 
         </select>
-      </div>
-    </header>
-<!-- newsletter -->
-  <section id="main-content">
-  </div>
-  <img id="loading" src="./assets/images/ajax-loader.gif">
-</div>
+      </datalist>
+      <!-- </form> -->
+    </section>
 
-  </section>  
+<!-- newsletter -->
+<section id="main-content">
+  <img id="loading" src="./assets/images/ajax-loader.gif">
+</section>  
     
 <!-- footer -->
-  <footer id="footer">
+  <footer section="footer-container">
     <p>&copy; Copyright 2019 <span>INSTANEWS</span></p>            
   </footer>
       
