@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instant News</title>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" type="text/css" href="build/css/main.css" /> 
-</head>
-  
-<body>
-<!-- header -->
-<header id="logo-container">
-  <figure>
-    <img src="assets/images/nyt-logo.svg" alt="NY Times Logo" />
-  </figure>
- 
-<!-- grid / newsletter starts -->
-<div class="dropbtn">
-  <h1 class="choose-section">Choose a section:</h1>
-    <select id="select">
-      <label for="select" name="Choose a section">
-        <div class="grid-wrapper">
-            <option value="sections" selected="selected">Sections...</option>            
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instant News</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="build/css/main.css" />
+  </head>
+
+  <body>
+    <!-- header -->
+    <header class="logo-container">
+      <figure>
+        <img src="assets/images/nyt-logo.svg" alt="NY Times Logo" />
+      </figure>
+
+      <!-- grid / newsletter starts -->
+      <div class="dropbtn">
+        <h1 class="choose-section">Choose a section:</h1>
+        <select id="select">
+          <label for="select" name="Choose a section">
+            <option value="sections" selected="selected">Sections...</option>
             <option value="arts">Arts</option>
             <option value="automobiles">Automobiles</option>
             <option value="books">Books</option>
@@ -47,22 +46,23 @@
             <option value="upshot">Upshot</option>
             <option value="us">US</option>
             <option value="world">World</option>
-            </div>
-          </label> 
+          </label>
         </select>
       </header>
+      </div>
 
-<!-- newsletter -->
-<section id="main-content">
-  <!-- ajax loader here -->
-</section>  
+      <!-- newsletter -->
+      <section class="main-content">
+        <!-- ajax loader here -->
+      </section>
+
+      <!-- footer -->
+      <footer section="footer-container">
+        <p>&copy; Copyright 2019 <span>INSTANEWS</span></p>
+      </footer>
     
-<!-- footer -->
-  <footer section="footer-container">
-    <p>&copy; Copyright 2019 <span>INSTANEWS</span></p>            
-  </footer>
-      
-  <script
+
+    <script
       src="http://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
