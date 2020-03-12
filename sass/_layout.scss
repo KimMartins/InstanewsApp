@@ -22,9 +22,11 @@ body {
 .logo-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
 
   img {
-    width: 200px;
+    width: 300px;
   }
 
   @include tablet {
@@ -32,17 +34,27 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    img {
+      width: 200px;
+    }
   }
 
   @include desktop {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    margin-top: 5%;
+    margin: 3%;
   }
 }
 
 .choose-section {
   padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.dropbtn {
+  padding-left: 2%;
 }
 
 .main-content {
@@ -86,21 +98,20 @@ body {
 }
 
 footer {
+  text-align: center;
+
   @include tablet {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
   }
 
   @include desktop {
     display: flex;
     justify-content: flex-start;
+    margin-left: 5%;
   }
   p {
     color: #c2c2c2;
   }
 }
-
-// // layout styles for tablet
-// @media screen and (min-width: 600px) {
-//   body,
-//   html {
