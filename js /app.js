@@ -1,3 +1,9 @@
+// Wait for window load
+// $(window).load(function() {
+//   // Animate loader off screen
+//   // $(".se-pre-con").fadeOut("slow");;
+// });
+
 $(function() {
   $(".dropbtn").on("change", function() {
     let userInput = $("select").val();
@@ -26,6 +32,9 @@ $(function() {
       $(".dropbtn").on("change", function() {
         $(".main-content").empty();
       });
+
+      // // hides loader gif
+      // $(".loader").hide();
     });
   });
 });
