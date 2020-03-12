@@ -124,55 +124,52 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 @font-face {
   font-family: "Open Sans";
-  src: url("/assets/fonts/OpenSans-BoldItalic.ttf");
-  src: url("/assets/fonts/OpenSans-BoldItalic.ttf?#iefix")
-      format("embedded-opentype"),
-    url("/assets/fonts/OpenSans-BoldItalic.ttf.woff2") format("woff2"),
-    url("/assets/fonts/OpenSans-BoldItalic.ttf.woff") format("woff"),
-    url("/assets/fonts/OpenSans-BoldItalic.ttf.ttf") format("truetype"),
-    url("/assets/fonts/OpenSans-BoldItalic.ttf.svg#OpenSans-BoldItalic")
-      format("svg");
+  src: url("./fonts/OpenSans-BoldItalic.eot");
+  src: url("./fonts/OpenSans-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/OpenSans-BoldItalic.woff2") format("woff2"),
+    url("./fonts/OpenSans-BoldItalic.woff") format("woff"),
+    url("./fonts/OpenSans-BoldItalic.ttf") format("truetype"),
+    url("./fonts/OpenSans-BoldItalic.svg#OpenSans-BoldItalic") format("svg");
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Open Sans";
-  src: url("/assets/fonts/OpenSans-Bold.ttf");
-  src: url("/assets/fonts/OpenSans-Bold.ttf?#iefix") format("embedded-opentype"),
-    url("/assets/fonts/OpenSans-Bold.ttf.woff2") format("woff2"),
-    url("/assets/fonts/OpenSans-Bold.ttf.woff") format("woff"),
-    url("/assets/fonts/OpenSans-Bold.ttf.ttf") format("truetype"),
-    url("/assets/fonts/OpenSans-Bold.ttf.svg#OpenSans-Bold") format("svg");
+  src: url("./fonts/OpenSans-Bold.eot");
+  src: url("./fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/OpenSans-Bold.woff2") format("woff2"),
+    url("./fonts/OpenSans-Bold.woff") format("woff"),
+    url("./fonts/OpenSans-Bold.ttf") format("truetype"),
+    url("./fonts/OpenSans-Bold.svg#OpenSans-Bold") format("svg");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Open Sans";
-  src: url("/assets/fonts/OpenSans-LightItalic.ttf");
-  src: url("/assets/fonts/OpenSans-LightItalic.ttf?#iefix")
+  font-family: "./fonts/Open Sans";
+  src: url("./fonts/penSansLight-Italic.eot");
+  src: url("./fonts/OpenSansLight-Italic.eot?#iefix")
       format("embedded-opentype"),
-    url("/assets/fonts/OpenSans-LightItalic.ttf.woff2") format("woff2"),
-    url("/assets/fonts/OpenSans-LightItalic.ttf.woff") format("woff"),
-    url("/assets/fonts/OpenSans-LightItalic.ttf.ttf") format("truetype"),
-    url("/assets/fonts/OpenSans-LightItalic.ttf.svg#OpenSansLight-Italic")
-      format("svg");
+    url("./fonts/OpenSansLight-Italic.woff2") format("woff2"),
+    url("./fonts/OpenSansLight-Italic.woff") format("woff"),
+    url("./fonts/OpenSansLight-Italic.ttf") format("truetype"),
+    url("./fonts/OpenSansLight-Italic.svg#OpenSansLight-Italic") format("svg");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: "/assets/fonts/Open Sans";
-  src: url("/assets/fonts/OpenSans-Light.eot");
-  src: url("/assets/fonts/OpenSans-Light.eot?#iefix")
-      format("embedded-opentype"),
-    url("/assets/fonts/OpenSans-Light.woff2") format("woff2"),
-    url("/assets/fonts/OpenSans-Light.woff") format("woff"),
-    url("/assets/fonts/OpenSans-Light.ttf") format("truetype"),
-    url("/assets/fonts/OpenSans-Light.svg#OpenSans-Light") format("svg");
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans-Light.eot");
+  src: url("./fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/OpenSans-Light.woff2") format("woff2"),
+    url("./fonts/OpenSans-Light.woff") format("woff"),
+    url("./fonts/OpenSans-Light.ttf") format("truetype"),
+    url("./fonts/OpenSans-Light.svg#OpenSans-Light") format("svg");
   font-weight: 300;
   font-style: normal;
 }
@@ -182,8 +179,7 @@ $main-color: #ffffff;
 
 $black-color: #000000;
 $main-font: "Open Sans";
-$font-style: normal;
-$font-size: 1em;
+$font-size: 16px;
 $font-weight: 300;
 
 $base-margin: 1.5em;
@@ -192,43 +188,14 @@ $line-height: 1;
 $tablet-width: 600px;
 $desktop-width: 1240px;
 
-@mixin font {
-  font-family: $main-font;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  font-style: $font-style;
-}
-
-@mixin flex {
-  display: $flex;
-  align-items: $align-items;
-  flex-direction: $flex-direction;
-  justify-content: $justify-content;
-}
-
-@mixin flex-start {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-@mixin grid {
-  display: grid;
-  margin: 0;
-  width: 100%;
-  background-color: #000000;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-}
-
-@mixin tablet {
-  @media screen and (min-width: $tablet-width) {
+@mixin desktop {
+  @media (min-width: $desktop-width) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media screen and (max-width: $desktop-width) {
+@mixin tablet {
+  @media (min-width: $tablet-width) {
     @content;
   }
 }

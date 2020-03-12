@@ -1,92 +1,246 @@
-// CUSTOM STYLES MOBILE
-html,
+// custom styles for mobile
+
 body {
-  flex-direction: column;
+  height: 100%;
   background-color: $black-color;
-}
-// container used for logo
-.logo-container {
-  width: 100%;
-  margin-top: 100px;
+  color: $main-color;
+  font-family: "Open Sans";
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
   text-align: center;
-  // stetch goal -- animation: transform-style: ;
 
-  .img {
-    @include flex();
-    width: 17rem;
-    margin-left: 25%;
-    margin-top: 10%;
+  a {
+    color: $main-color;
+    text-decoration: none;
+  }
+  @include tablet {
+    text-align: left;
+  }
+}
 
-    &:hover {
-      background: green;
-    }
+.logo-container {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 200px;
+  }
+  // stretch goal -- animation: transform-style: ;
+  // stretch goal -- logo on click will return back to home page
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 
-  .dropbtn-container {
-    @include flex();
-    height: 3rem;
-    width: 20rem;
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
   }
 }
 
 .choose-section {
-  padding-bottom: 50px;
+  padding-bottom: 15px;
+}
 
-  p {
-    @include flex();
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-top: 30px;
+  figure {
+    position: relative;
+  }
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
-.grid-wrapper {
-  @include grid();
-  background: $black-color;
-  height: 100%;
-  width: 100%;
-}
-
-.thumbnail {
-  object-fit: cover;
-  width: 100%;
-  height: 300px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2));
-}
-
-figure {
-  position: relative;
-}
-
-.abstract {
-  position: absolute;
-  background: rgb(78, 78, 78);
-  border: rgb(78, 78, 78);
-  opacity: 0.8;
-  bottom: 0;
-  padding: 10px;
+.article-image {
+  img {
+    grid-column-start: 1;
+    object-fit: cover;
+    height: 400px;
+    width: 100%;
+  }
 }
 
 .article-text {
-  @include font();
-  padding: 10px;
-  color: $main-color;
-  text-underline-position: none;
-
+  text-align: left;
+  grid-column-start: 1;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0px;
+  padding: 15px 20px;
   &:hover {
-    background: #4b0082;
+    background: rgba(96, 11, 122, 0.5);
+  }
+}
+
+footer {
+  @include tablet {
+    display: flex;
+    justify-content: center;
   }
 
-  #loader {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 10%;
+  @include desktop {
+    display: flex;
+    justify-content: flex-start;
   }
-
-  .footer-container {
-    @include flex();
-  }
-
   p {
-    @include font();
     color: #c2c2c2;
   }
 }
+
+// // layout styles for tablet
+// @media screen and (min-width: 600px) {
+//   body,
+//   html {
+//     width: $tablet-width;
+//   }
+
+//   .logo-container {
+//     display: flex-start;
+//     justify-content: flex-start;
+
+//     img {
+//       // margin-left: 25%;
+//       // margin-top: 10%;
+//       margin-right: 0px;
+//       margin-left: 50px;
+//       margin-bottom: 50px;
+//       margin-top: 50px;
+//     }
+//   }
+
+//   .dropbtn-container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   #select {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding-left: 50px;
+//     width: 90px;
+//     height: 70px;
+//   }
+
+//   .grid {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     grid-template-rows: auto;
+//     grid-gap: 0 auto;
+//     height: 100%;
+//   }
+// }
+
+// // .thumbnail {
+// //   height: 500px;
+// // }
+
+// .abstract {
+//   padding: 10px;
+// }
+
+// #main-content {
+//   height: auto;
+//   width: 200%;
+// }
+
+// .footer-container {
+//   @include flex-start();
+//   padding-left: 20px;
+
+//   p {
+//     @include font();
+//     margin-top: 50px;
+//   }
+// }
+
+// /*
+// // Desktop Stylesheet  */
+// @media screen and (min-width: 1240px) {
+//   // Choose a section */
+//   .choose-section {
+//     @include flex-start();
+
+//     p {
+//       @include font();
+//       font-size: 20px;
+//     }
+//   }
+
+//   .dropbtn-container {
+//     @include flex-start();
+//   }
+
+//   /* // sections text */
+//   #select {
+//     @include flex-start();
+//     @include font();
+//     color: $black-color;
+//     width: 90px;
+//     height: 70px;
+//   }
+
+//   .grid-wrapper {
+//     background-color: #000000;
+//     padding: 5px;
+//   }
+
+//   .grid {
+//     display: grid;
+//     grid-template-columns: repeat(4 1fr);
+//     grid-template-rows: auto;
+//   }
+
+//   // url
+
+//   .figure {
+//     position: relative;
+//     text-align: center;
+//   }
+
+//   .articleImage img {
+//     object-fit: contain;
+//     height: 100%;
+//   }
+
+//   .description {
+//     background: rgba(0, 0, 0, 0.75);
+//     position: absolute;
+//     bottom: 0;
+//   }
+
+//   .article-text {
+//     @include font();
+//     padding: 10px;
+
+//     &:hover {
+//       background: #4b0082;
+//     }
+//   }
+
+//   .footer-container {
+//     @include flex-start();
+
+//     p {
+//       @include font();
+//       color: #c2c2c2;
+//       vertical-align: baseline;
+//     }
+//   }
+// }
